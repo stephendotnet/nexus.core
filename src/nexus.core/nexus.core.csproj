@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0BFB8710-A65C-453D-BD97-72F72D922156}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>nexus.core</RootNamespace>
+    <AssemblyName>nexus.core</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <DocumentationFile>..\..\artifacts\bin\$(Configuration)\$(AssemblyName)\$(Platform)\$(AssemblyName).xml</DocumentationFile>
+    <CodeContractsAssemblyMode>1</CodeContractsAssemblyMode>
+    <NexusAppPlatform>pcl</NexusAppPlatform>
+    <DontImportCodeContracts>true</DontImportCodeContracts>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionAsync.cs" />
+    <Compile Include="ActionObserver.cs" />
+    <Compile Include="Bytes.Constants.cs" />
+    <Compile Include="Bytes.Utils.cs" />
+    <Compile Include="IGenericObjectConverter.cs" />
+    <Compile Include="IUpdatable.cs" />
+    <Compile Include="logging\sink\ActionLogSink.cs" />
+    <Compile Include="logging\LogEntryComparers.cs" />
+    <Compile Include="logging\DeferredMessageLogEntry.cs" />
+    <Compile Include="logging\MutableLogEntry.cs" />
+    <Compile Include="logging\sink\CustomLogSerializerBuilder.cs" />
+    <Compile Include="logging\sink\MergedLogSink.cs" />
+    <Compile Include="ObjectConverter.cs" />
+    <Compile Include="Observable.cs" />
+    <Compile Include="package\BuildType.cs" />
+    <Compile Include="Bytes.Conversion.cs" />
+    <Compile Include="resharper\CanBeNullAttribute.cs" />
+    <Compile Include="resharper\ContractAnnotationAttribute.cs" />
+    <Compile Include="resharper\ItemCanBeNullAttribute.cs" />
+    <Compile Include="resharper\ItemNotNullAttribute.cs" />
+    <Compile Include="resharper\NotNullAttribute.cs" />
+    <Compile Include="Deserializer.cs" />
+    <Compile Include="TaskConstants.cs" />
+    <Compile Include="CollectionExtensions.cs" />
+    <Compile Include="ComparableExtensions.cs" />
+    <Compile Include="CoreUtils.cs" />
+    <Compile Include="Deferred.cs" />
+    <Compile Include="DisposeAction.cs" />
+    <Compile Include="ByteOrder.cs" />
+    <Compile Include="Enum.cs" />
+    <Compile Include="EnumDescriptionAttribute.cs" />
+    <Compile Include="exception\IException.cs" />
+    <Compile Include="exception\IStackFrame.cs" />
+    <Compile Include="exception\NativeExceptionConverter.cs" />
+    <Compile Include="exception\UniversalException.cs" />
+    <Compile Include="exception\UniversalExceptionStackFrame.cs" />
+    <Compile Include="Expected.cs" />
+    <Compile Include="logging\ILog.cs" />
+    <Compile Include="logging\sink\SimpleLogEntryToStringConverter.cs" />
+    <Compile Include="logging\ILogControl.cs" />
+    <Compile Include="logging\ILogEntry.cs" />
+    <Compile Include="logging\ILogSink.cs" />
+    <Compile Include="logging\Log.cs" />
+    <Compile Include="logging\LogLevel.cs" />
+    <Compile Include="logging\LogExtensions.cs" />
+    <Compile Include="logging\SystemLog.cs" />
+    <Compile Include="Observer.cs" />
+    <Compile Include="Option.cs" />
+    <Compile Include="Pair.cs" />
+    <Compile Include="Parse.cs" />
+    <Compile Include="resharper\PureAttribute.cs" />
+    <Compile Include="resharper\StringFormatMethodAttribute.cs" />
+    <Compile Include="text\Base16Encoder.cs" />
+    <Compile Include="text\Base64Encoder.cs" />
+    <Compile Include="text\EncodingUtils.cs" />
+    <Compile Include="text\IBinaryEncoder.cs" />
+    <Compile Include="IDeserializer.cs" />
+    <Compile Include="IObjectConverter.cs" />
+    <Compile Include="io\IStreamDeserializer.cs" />
+    <Compile Include="io\ITextReaderDeserializer.cs" />
+    <Compile Include="io\ITextWriterSerializer.cs" />
+    <Compile Include="io\SerializationUtils.cs" />
+    <Compile Include="io\IStreamSerializer.cs" />
+    <Compile Include="text\Utf8Encoding.cs" />
+    <Compile Include="text\ITextEncoding.cs" />
+    <Compile Include="text\TextEncoding.cs" />
+    <Compile Include="text\Utf16Encoding.cs" />
+    <Compile Include="StringUtils.cs" />
+    <Compile Include="time\DateTimeUtils.cs" />
+    <Compile Include="time\DefaultTimeProvider.cs" />
+    <Compile Include="time\ITimeProvider.cs" />
+    <Compile Include="time\TimeEpoch.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\lib\packages\nexus.utils.build.0.1.18\build\nexus.utils.build.targets" Condition="Exists('..\..\lib\packages\nexus.utils.build.0.1.18\build\nexus.utils.build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\lib\packages\nexus.utils.build.0.1.18\build\nexus.utils.build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\lib\packages\nexus.utils.build.0.1.18\build\nexus.utils.build.targets'))" />
+  </Target>
+</Project>
